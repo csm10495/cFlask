@@ -1,5 +1,5 @@
 # cFlask
-Simple wrapper to Flask for simple versioned APIs
+Simple wrapper to Flask for simple versioned APIs. Supported on Python 2.7 and Python 3.2 and greater.
 
 ## Example
 ```
@@ -35,3 +35,9 @@ class _ExampleCFlask(cFlask):
 - example.com/1/callingv1 -> handleV1('callingv1') is called
 - example.com/2/callingv2 -> handleV2('callingv2') is called
 - example.com/3/callingv3 -> handlerVDefault('3/callingv3') is called since there isn't a handler for v3
+
+### How to Install
+```
+pip install cflask
+```
+
