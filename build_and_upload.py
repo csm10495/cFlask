@@ -18,7 +18,7 @@ def caller(c):
     os.system(c)
 
 # delete dist folder
-shutil.rmtree(DIST_FOLDER)
+shutil.rmtree(DIST_FOLDER, ignore_errors=True)
 
 os.chdir(THIS_FOLDER)
 caller('%s setup.py sdist' % sys.executable)
