@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='cflask',
-      version='0.1.1',
+      version='0.1.2',
       description='Simple versioning api built on flask',
       url='http://github.com/csm10495/cflask',
       author='csm10495',

@@ -17,6 +17,7 @@ from flask import Flask
 DEFAULT = 'Default'
 LOGGER = logging.getLogger(__name__)
 URL_PREFIX = 'handleV'
+SUPPORTED_METHODS = ['HEAD', 'GET', 'POST', 'OPTIONS', 'DELETE', 'PUT']
 
 class cFlask(Flask):
     '''
@@ -39,8 +40,8 @@ class cFlask(Flask):
         setattr(self, self._urlPrefix + DEFAULT, self.handleVDefault)
 
         # add full path router
-        self.add_url_rule('/<path:fullPath>', view_func=self.fullPathRouter)
-        self.add_url_rule('/', view_func=self.handleVDefault, defaults={'fullPath' : ''})
+        self.add_url_rule('/<path:fullPath>', view_func=self.fullPathRouter, methods=SUPPORTED_METHODS)
+        self.add_url_rule('/', view_func=self.handleVDefault, defaults={'fullPath' : ''}, methods=SUPPORTED_METHODS)
 
     def _isValidVersion(self, ver):
         '''
